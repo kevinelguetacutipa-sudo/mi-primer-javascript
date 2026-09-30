@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo Simple: Suma en JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+    input, button {
+      padding: 8px;
+      font-size: 16px;
+      margin: 5px;
+    }
+    #resultado {
+      color: green;
+      font-size: 20px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Calculadora de Suma Simple</h2>
+
+  <!-- 1. Campos donde el usuario escribe -->
+  <input type="number" id="numero1" placeholder="Primer número">
+  <span>+</span>
+  <input type="number" id="numero2" placeholder="Segundo número">
+
+  <!-- 2. Botón que dispara la función -->
+  <button onclick="realizarSuma()">Calcular Suma</button>
+
+  <!-- 3. Elemento donde imprimiremos el resultado -->
+  <div id="resultado">El resultado aparecerá aquí.</div>
+
+  <!-- 4. Código JavaScript -->
+  <script>
+    function realizarSuma() {
+      // Paso A: Leer el texto de las casillas usando su ID
+      let texto1 = document.getElementById('numero1').value;
+      let texto2 = document.getElementById('numero2').value;
+
+      // Paso B: Convertir el texto a número (obligatorio para operar)
+      let num1 = Number(texto1);
+      let num2 = Number(texto2);
+
+      // Paso C: Calcular la suma
+      let total = num1 + num2;
+
+      // Paso D: Imprimir el resultado en la pantalla dentro de la etiqueta #resultado
+      document.getElementById('resultado').textContent = "El resultado es: " + total;
+    }
+  </script>
+
+</body>
+</html>
